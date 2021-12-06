@@ -9,6 +9,7 @@ spring:
         protocol: "SASL_SSL"
       ssl:
         truststore:
+          ##### Set jks file location
           location: "/Users/user/kafka-client.truststore.jks"
           password: "client"
         endpoint:
@@ -16,11 +17,13 @@ spring:
             algorithm: ""
       sasl:
         jaas:
+          ##### Change username and password
           config: "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"test\" password=\"test\";"
         mechanism: "SCRAM-SHA-512"
       linger:
         ms: 300
     producer:
+      ##### Update kafka bootstrap-servers
       bootstrap-servers: kafkabootstrap.com:14499
       acks: 1
       compression-type: gzip
