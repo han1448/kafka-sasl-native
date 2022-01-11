@@ -2,6 +2,7 @@
 
 ## Note: 
 - Change topic name: `Sender.send()`
+  - https://github.com/han1448/kafka-sasl-native/blob/main/src/main/kotlin/com/example/kafkasasl/Sender.kt#L14  
 - Change application.yaml for the kafka information and sasl configuration
 
 # Build Native Image
