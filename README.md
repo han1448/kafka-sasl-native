@@ -2,7 +2,7 @@
 
 ## Note: 
 - Change topic name: `Sender.send()`
-- Change application.yaml for the kafka information
+- Change application.yaml for the kafka information and sasl configuration
 
 # Build Native Image
 ```shell
