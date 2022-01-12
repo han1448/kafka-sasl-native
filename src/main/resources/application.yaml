@@ -13,5 +13,5 @@ spring:
       properties:
         sasl:
           jaas:
-            config: "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"admin\" password=\"admin-secret\";"
+            config: "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"admin1\" password=\"admin-secret\";"
           mechanism: "PLAIN"

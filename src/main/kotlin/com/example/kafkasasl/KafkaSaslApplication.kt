@@ -2,6 +2,9 @@
 
 package com.example.kafkasasl
 
+import org.apache.kafka.clients.NetworkClient
+import org.apache.kafka.clients.producer.internals.Sender
+import org.apache.kafka.common.network.SaslChannelBuilder
 import org.apache.kafka.common.security.authenticator.AbstractLogin
 import org.apache.kafka.common.security.authenticator.DefaultLogin
 import org.apache.kafka.common.security.authenticator.SaslClientAuthenticator
@@ -23,7 +26,8 @@ import javax.security.sasl.SaslClient
         SaslClientCallbackHandler::class,
         DefaultLogin::class, AbstractLogin.DefaultLoginCallbackHandler::class, PlainLoginModule::class,
         LoginModule::class, ScramLoginModule::class, ScramSaslClient::class, ScramSaslClient.ScramSaslClientFactory::class,
-        Resources::class, SaslClientAuthenticator::class, ScramFormatter::class, PlainLoginModule::class, SaslClient::class
+        Resources::class, SaslClientAuthenticator::class, ScramFormatter::class, PlainLoginModule::class, SaslClient::class,
+        NetworkClient::class, Sender::class, SaslChannelBuilder::class
     ]
 )
 @SpringBootApplication
