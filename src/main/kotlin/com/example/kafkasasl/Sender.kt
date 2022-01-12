@@ -11,7 +11,7 @@ class Sender(
 
     @PostConstruct
     fun send() {
-        producer.send("testtopic1", "1","data").addCallback(
+        producer.send("testtopic4", "1","data").addCallback(
             { println("success")}, {println(it)}
         )
     }
