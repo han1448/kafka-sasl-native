@@ -11,7 +11,8 @@ class Sender(
 
     @PostConstruct
     fun send() {
-        producer.send("testkafka-v1", "data")
-        println("send completed")
+        producer.send("testtopic1", "1","data").addCallback(
+            { println("success")}, {println(it)}
+        )
     }
 }

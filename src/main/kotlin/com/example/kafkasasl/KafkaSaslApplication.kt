@@ -15,13 +15,15 @@ import org.springframework.boot.runApplication
 import org.springframework.nativex.hint.TypeHint
 import sun.security.util.Resources
 import javax.security.auth.spi.LoginModule
+import javax.security.sasl.SaslClient
+
 
 @TypeHint(
     types = [
         SaslClientCallbackHandler::class,
         DefaultLogin::class, AbstractLogin.DefaultLoginCallbackHandler::class, PlainLoginModule::class,
         LoginModule::class, ScramLoginModule::class, ScramSaslClient::class, ScramSaslClient.ScramSaslClientFactory::class,
-        Resources::class, SaslClientAuthenticator::class, ScramFormatter::class
+        Resources::class, SaslClientAuthenticator::class, ScramFormatter::class, PlainLoginModule::class, SaslClient::class
     ]
 )
 @SpringBootApplication

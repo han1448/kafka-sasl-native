@@ -4,28 +4,14 @@ spring:
 
   # Kafka properties
   kafka:
-    properties:
-      security:
-        protocol: "SASL_SSL"
-      ssl:
-        truststore:
-          ##### Set jks file location
-          location: "/Users/user/kafka-client.truststore.jks"
-          password: "client"
-        endpoint:
-          identification:
-            algorithm: ""
-      sasl:
-        jaas:
-          ##### Change username and password
-          config: "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"test\" password=\"test\";"
-        mechanism: "SCRAM-SHA-512"
-      linger:
-        ms: 300
+    security:
+      protocol: "SASL_PLAINTEXT"
     producer:
-      ##### Update kafka bootstrap-servers
-      bootstrap-servers: kafkabootstrap.com:14499
-      acks: 1
-      compression-type: gzip
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: localhost:9092
+      properties:
+        sasl:
+          jaas:
+            config: "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"admin\" password=\"admin-secret\";"
+          mechanism: "PLAIN"
